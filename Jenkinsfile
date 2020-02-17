@@ -1,51 +1,20 @@
 pipeline {
-    agent {node {label 'master'} }
+    agent any 
     stages {
-        stage('Environment') {
-            agent { 
-                label 'master'
-            }
+        stage('Build') { 
             steps {
-				echo "NODE_NAME = ${env.NODE_NAME}"
-				sh 'printenv'
+                // 
             }
         }
-        stage('Build') {
-            agent { 
-                label 'ZSbuild'
-            }
+        stage('Test') { 
             steps {
-				echo "NODE_NAME = ${env.NODE_NAME}"
-				sh 'hostname -i'
-                sh 'echo "Build Started"'				
-				sh 'pwd'
-    			sh './buildcreateApacheTomcat.sh'
-    			sh 'pwd'
-    			sh './buildcreateJenkins.sh'
-                sh 'echo "Build Finished"'
-				sh 'pwd'
-    			sh './sshpassInstall.sh'				
+                // 
             }
         }
-        stage('Staging Server1') {
-            agent { 
-                node 'ZSstage1'
-                // label 'ZSstage'
-            }
+        stage('Deploy') { 
             steps {
-				echo "NODE_NAME = ${env.NODE_NAME}"
-				sh 'hostname -i'
-				sh 'pwd'
-                sh './deployApacheTomcat.sh'
-                sh 'echo "Apache Tomcat Deployed"'
-				sh 'pwd'
-                sh './deployJenkins.sh'
-                sh 'echo "Jenkins Application Deployed"'
+                // 
             }
-            post {
-                always {
-                    sh 'echo "Post Test on Linux ZSstage"'
-                    sh 'echo "Check the Jenkins Page here http://ec2-54-86-91-68.compute-1.amazonaws.com:8080/jenkins"'
-                }
-            }
-        }AB 
+        }
+    }
+}
