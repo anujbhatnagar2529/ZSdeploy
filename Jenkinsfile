@@ -1,6 +1,6 @@
 pipeline {
-agent {node {label 'master'} }
-stages {
+	agent {node {label 'master'} }
+	stages {
 		stage('Environment') {
 			agent { 
 				label 'master'
@@ -10,18 +10,19 @@ stages {
 				sh 'printenv'
 			}
 		}
-	
+
 		 stage('DeployedServer') {
 		 parallel { 
 			agent {node {label 'ZScustomer'} }
-            steps {
+			steps {
 					echo "NODE_NAME = ${env.NODE_NAME}"
 					sh 'hostname -i'
 					stage('Integration test') {
 					steps {
 					echo "Running the integration test..."
-				  }
-			   }
+						}
+					}
+				}
 			}
 		}
 	}
