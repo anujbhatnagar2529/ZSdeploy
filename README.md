@@ -4,7 +4,7 @@ Developer just needs to provide variable inside the file and commit the changes 
 
 It will automatically trigger the Jenkins build and deploy all the changes in the production/client environment.
 
-In the below code snippet from the Jenkins file, please change value of ZSclientA.html to anyThingYouLike.html
+In the below code snippet from the Jenkinsfile, please change value of ZSclientA.html to anyThingYouLike.html
 and see the logic working...
 
 ----------------------------------------------------------------------------
