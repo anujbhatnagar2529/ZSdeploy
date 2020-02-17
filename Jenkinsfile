@@ -10,23 +10,8 @@ pipeline {
 						sh 'printenv'
 					}
 				 }
-                 stage('StagingServer') {
-                 steps {
-                    echo('Welcome to StagingServer')
-                 }
-                 }
-				stage('Staging Server2') {
-				agent {
-					//node 'ZSstage2'
-					label 'ZScustomer'
-				}
-				steps {
-					echo "NODE_NAME = ${env.NODE_NAME}"
-					sh 'hostname -i'
-					sh 'echo "Build Started"'
-					sh 'pwd'
-				}
-				}
+
+
                  stage('DeployedServer') {
                  parallel { 
 							stage('Customer Server1') {
@@ -37,6 +22,7 @@ pipeline {
 							steps {
 								echo "NODE_NAME = ${env.NODE_NAME}"
 								sh 'hostname -i'
+								sh 'yum install git -y'
 								sh 'echo "Build Started"'
 								sh 'pwd'
 							}
@@ -49,6 +35,7 @@ pipeline {
 							steps {
 								echo "NODE_NAME = ${env.NODE_NAME}"
 								sh 'hostname -i'
+								sh 'yum install git -y'
 								sh 'echo "Build Started"'
 								sh 'pwd'
 							}
@@ -61,6 +48,7 @@ pipeline {
 							steps {
 								echo "NODE_NAME = ${env.NODE_NAME}"
 								sh 'hostname -i'
+								sh 'yum install git -y'
 								sh 'echo "Build Started"'
 								sh 'pwd'
 							}
@@ -73,6 +61,7 @@ pipeline {
 							steps {
 								echo "NODE_NAME = ${env.NODE_NAME}"
 								sh 'hostname -i'
+								sh 'yum install git -y'
 								sh 'echo "Build Started"'
 								sh 'pwd'
 							}
