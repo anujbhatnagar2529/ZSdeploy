@@ -29,7 +29,7 @@ pipeline {
 				}
                  stage('DeployedServer') {
                  parallel { 
-							stage('Staging Server2') {
+							stage('Customer Server1') {
 							agent {
 								//node 'ZSstage2'
 								label 'ZScustomer'
@@ -41,7 +41,31 @@ pipeline {
 								sh 'pwd'
 							}
 							}
-							stage('Staging Server2') {
+							stage('Customer Server2') {
+							agent {
+								//node 'ZSstage2'
+								label 'ZScustomer'
+							}
+							steps {
+								echo "NODE_NAME = ${env.NODE_NAME}"
+								sh 'hostname -i'
+								sh 'echo "Build Started"'
+								sh 'pwd'
+							}
+							}
+							stage('Customer Server3') {
+							agent {
+								//node 'ZSstage2'
+								label 'ZScustomer'
+							}
+							steps {
+								echo "NODE_NAME = ${env.NODE_NAME}"
+								sh 'hostname -i'
+								sh 'echo "Build Started"'
+								sh 'pwd'
+							}
+							}
+							stage('Customer Server4') {
 							agent {
 								//node 'ZSstage2'
 								label 'ZScustomer'
