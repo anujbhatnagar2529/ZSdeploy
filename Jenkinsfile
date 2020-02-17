@@ -6,8 +6,8 @@ pipeline {
                 label 'master'
             }
             steps {
-				echo "NODE_NAME = ${env.NODE_NAME}"
-				sh 'printenv'
+		echo "NODE_NAME = ${env.NODE_NAME}"
+		sh 'printenv'
             }
         }
         stage('Build') {
