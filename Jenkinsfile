@@ -23,8 +23,12 @@ pipeline {
 					echo "NODE_NAME = ${env.NODE_NAME}"
 					sh 'hostname -i'
 
-					sh 'echo "Build Started"'
+					sh 'echo "Process Started"'
 					sh 'pwd'
+					
+					// User provided input to change the URL of deployed app
+					sh 'accessURL.sh anuj'
+					
 				}
 				}
 				stage('Client B') {
@@ -36,8 +40,12 @@ pipeline {
 					echo "NODE_NAME = ${env.NODE_NAME}"
 					sh 'hostname -i'
 
-					sh 'echo "Build Started"'
+					sh 'echo "Process Started"'
 					sh 'pwd'
+
+					// User provided input to change the URL of deployed app
+					sh 'accessURL.sh anuj'
+					
 				}
 				}
 				stage('Client C') {
@@ -49,8 +57,11 @@ pipeline {
 					echo "NODE_NAME = ${env.NODE_NAME}"
 					sh 'hostname -i'
 
-					sh 'echo "Build Started"'
+					sh 'echo "Process Started"'
 					sh 'pwd'
+					
+					// User provided input to change the URL of deployed app
+					sh 'accessURL.sh anuj'
 				}
 				}
 				stage('Client D') {
@@ -62,8 +73,11 @@ pipeline {
 					echo "NODE_NAME = ${env.NODE_NAME}"
 					sh 'hostname -i'
 
-					sh 'echo "Build Started"'
+					sh 'echo "Process Started"'
 					sh 'pwd'
+					
+					// User provided input to change the URL of deployed app
+					sh 'accessURL.sh anuj'
 				}
 				}
 			}
