@@ -17,13 +17,13 @@ pipeline {
 			steps {
 					echo "NODE_NAME = ${env.NODE_NAME}"
 					sh 'hostname -i'
-					stage('Integration test') {
-					steps {
-					echo "Running the integration test..."
-						}
-					}
-				}
+			stage('Integration test') {
+			steps {
+			echo "Running the integration test..."
+			}
 			}
 		}
 	}
+}
+}
 }
