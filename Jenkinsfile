@@ -48,23 +48,4 @@ pipeline {
                     sh 'echo "Check the Jenkins Page here http://ec2-54-86-91-68.compute-1.amazonaws.com:8080/jenkins"'
                 }
             }
-        }
-        stage('Staging Server2') {
-            agent {
-                node 'ZSstage2'
-                //label 'ZSstage'
-            }
-            steps {
-                echo "NODE_NAME = ${env.NODE_NAME}"
-				sh 'hostname -i'
-                sh 'echo "Build Started"'
-				sh 'pwd'
-            }
-            post {
-                always {
-                sh 'echo "Post Test on Unix ZSstage"'
-                }
-            }
-        }
-    }
-}
+        }AB 
