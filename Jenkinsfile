@@ -22,7 +22,7 @@ pipeline {
 							steps {
 								echo "NODE_NAME = ${env.NODE_NAME}"
 								sh 'hostname -i'
-								sh 'yum install git -y'
+								
 								sh 'echo "Build Started"'
 								sh 'pwd'
 							}
@@ -35,7 +35,7 @@ pipeline {
 							steps {
 								echo "NODE_NAME = ${env.NODE_NAME}"
 								sh 'hostname -i'
-								sh 'yum install git -y'
+								
 								sh 'echo "Build Started"'
 								sh 'pwd'
 							}
@@ -48,7 +48,7 @@ pipeline {
 							steps {
 								echo "NODE_NAME = ${env.NODE_NAME}"
 								sh 'hostname -i'
-								sh 'yum install git -y'
+								
 								sh 'echo "Build Started"'
 								sh 'pwd'
 							}
@@ -61,7 +61,7 @@ pipeline {
 							steps {
 								echo "NODE_NAME = ${env.NODE_NAME}"
 								sh 'hostname -i'
-								sh 'yum install git -y'
+								
 								sh 'echo "Build Started"'
 								sh 'pwd'
 							}
