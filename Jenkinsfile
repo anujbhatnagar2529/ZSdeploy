@@ -3,7 +3,7 @@ pipeline {
          stages {
                  stage('Environment') {
                  steps {
-                     echo 'Anuj BHATNAGAR...'
+                     echo 'Anuj ..BHATNAGAR...'
                  }
                  }
                  stage('StagingServer') {
