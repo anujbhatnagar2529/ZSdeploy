@@ -27,7 +27,7 @@ pipeline {
 					sh 'pwd'
 					
 					// User provided input to change the URL of deployed app
-					sh '/var/www/html/accessURL.sh anuj'
+					sh '/var/www/html/accessURL.sh ZSclientA.html'
 					
 				}
 				}
@@ -44,7 +44,7 @@ pipeline {
 					sh 'pwd'
 
 					// User provided input to change the URL of deployed app
-					sh '/var/www/html/accessURL.sh anuj'
+					sh '/var/www/html/accessURL.sh ZSclientB.html'
 					
 				}
 				}
@@ -61,7 +61,7 @@ pipeline {
 					sh 'pwd'
 					
 					// User provided input to change the URL of deployed app
-					sh '/var/www/html/accessURL.sh anuj'
+					sh '/var/www/html/accessURL.sh ZSclientC.html'
 				}
 				}
 				stage('Client D') {
@@ -77,7 +77,7 @@ pipeline {
 					sh 'pwd'
 					
 					// User provided input to change the URL of deployed app
-					sh '/var/www/html/accessURL.sh anuj'
+					sh '/var/www/html/accessURL.sh ZSclientD.html'
 				}
 				}
 			}
