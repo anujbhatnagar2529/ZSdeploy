@@ -14,7 +14,7 @@ pipeline {
 
                  stage('DeployedServer') {
                  parallel { 
-				stage('Customer Server1') {
+				stage('Client A') {
 				agent {
 					//node 'ZSstage2'
 					label 'ZScustomer'
@@ -27,7 +27,7 @@ pipeline {
 					sh 'pwd'
 				}
 				}
-				stage('Customer Server2') {
+				stage('Client B') {
 				agent {
 					//node 'ZSstage2'
 					label 'ZScustomer'
@@ -40,7 +40,7 @@ pipeline {
 					sh 'pwd'
 				}
 				}
-				stage('Customer Server3') {
+				stage('Client C') {
 				agent {
 					//node 'ZSstage2'
 					label 'ZScustomer'
@@ -53,7 +53,7 @@ pipeline {
 					sh 'pwd'
 				}
 				}
-				stage('Customer Server4') {
+				stage('Client D') {
 				agent {
 					//node 'ZSstage2'
 					label 'ZScustomer'
