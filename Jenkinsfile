@@ -44,7 +44,7 @@ pipeline {
 					sh 'pwd'
 
 					// User provided input to change the URL of deployed app
-					sh '/var/www/html/accessURL.sh ZSclientB.html'
+					sh '/var/www/html/accessURL.sh ZSclientBtest.html'
 					
 				}
 				}
