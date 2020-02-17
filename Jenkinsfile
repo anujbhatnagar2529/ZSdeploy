@@ -1,29 +1,59 @@
 pipeline {
-	agent {node {label 'master'} }
-	stages {
-		stage('Environment') {
-			agent { 
-				label 'master'
-			}
-			steps {
-				echo "NODE_NAME = ${env.NODE_NAME}"
-				sh 'printenv'
-			}
-		}
-
-		 stage('DeployedServer') {
-		 parallel { 
-			agent {node {label 'ZScustomer'} }
-			steps {
+         agent any
+         stages {
+				stage('Environment') {
+					agent { 
+						label 'master'
+					}
+					steps {
+						echo "NODE_NAME = ${env.NODE_NAME}"
+						sh 'printenv'
+					}
+				 }
+                 stage('StagingServer') {
+                 steps {
+                    echo('Welcome to StagingServer')
+                 }
+                 }
+				stage('Staging Server2') {
+				agent {
+					//node 'ZSstage2'
+					label 'ZScustomer'
+				}
+				steps {
 					echo "NODE_NAME = ${env.NODE_NAME}"
 					sh 'hostname -i'
-			stage('Integration test') {
-			steps {
-			echo "Running the integration test..."
-			}
-			}
-		}
-	}
-}
-}
+					sh 'echo "Build Started"'
+					sh 'pwd'
+				}
+				}
+                 stage('DeployedServer') {
+                 parallel { 
+							stage('Staging Server2') {
+							agent {
+								//node 'ZSstage2'
+								label 'ZScustomer'
+							}
+							steps {
+								echo "NODE_NAME = ${env.NODE_NAME}"
+								sh 'hostname -i'
+								sh 'echo "Build Started"'
+								sh 'pwd'
+							}
+							}
+							stage('Staging Server2') {
+							agent {
+								//node 'ZSstage2'
+								label 'ZScustomer'
+							}
+							steps {
+								echo "NODE_NAME = ${env.NODE_NAME}"
+								sh 'hostname -i'
+								sh 'echo "Build Started"'
+								sh 'pwd'
+							}
+							}
+					}
+				}
+        }
 }
